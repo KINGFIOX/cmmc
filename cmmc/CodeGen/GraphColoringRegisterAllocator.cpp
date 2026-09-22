@@ -22,6 +22,7 @@
 #include <cmmc/CodeGen/Target.hpp>
 #include <cmmc/Support/Diagnostics.hpp>
 #include <cmmc/Support/Dispatch.hpp>
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <iostream>

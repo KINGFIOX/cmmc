@@ -12,6 +12,7 @@
     limitations under the License.
 */
 
+#include <algorithm>
 #include <cmmc/Analysis/AliasAnalysis.hpp>
 #include <cmmc/Analysis/AnalysisPass.hpp>
 #include <cmmc/Analysis/CFGAnalysis.hpp>

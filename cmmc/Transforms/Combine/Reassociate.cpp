@@ -12,6 +12,7 @@
     limitations under the License.
 */
 
+#include <algorithm>
 #include <array>
 #include <cmmc/Analysis/AnalysisPass.hpp>
 #include <cmmc/IR/ConstantValue.hpp>

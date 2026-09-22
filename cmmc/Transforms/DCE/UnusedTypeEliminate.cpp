@@ -14,6 +14,7 @@
 
 // Remove unused aggregates
 
+#include <algorithm>
 #include <cmmc/Analysis/AnalysisPass.hpp>
 #include <cmmc/IR/Function.hpp>
 #include <cmmc/IR/GlobalVariable.hpp>

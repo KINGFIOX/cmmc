@@ -18,6 +18,7 @@
 #include <cstdint>
 #include <functional>
 #include <iostream>
+#include <iterator>
 #include <limits>
 #include <unordered_map>
 #include <unordered_set>
@@ -32,7 +33,7 @@ DominateAnalysisResult::DominateAnalysisResult(std::unordered_map<Block*, DomTre
         mOrder.push_back(node.block);
 
     mReservedOrder.reserve(mDomTree.size());
-    std::reverse_copy(mOrder.cbegin(), mOrder.cend(), mReservedOrder.begin());
+    std::reverse_copy(mOrder.cbegin(), mOrder.cend(), std::back_inserter(mReservedOrder));
 }
 
 Block* DominateAnalysisResult::parent(Block* node) const {

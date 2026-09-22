@@ -12,6 +12,7 @@
     limitations under the License.
 */
 
+#include <algorithm>
 #include <array>
 #include <chrono>
 #include <cmmc/CodeGen/CodeGenUtils.hpp>

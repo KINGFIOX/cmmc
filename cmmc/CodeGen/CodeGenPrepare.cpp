@@ -14,6 +14,7 @@
 
 // Utils before lowering
 
+#include <algorithm>
 #include <cmmc/Analysis/AnalysisPass.hpp>
 #include <cmmc/Analysis/DominateAnalysis.hpp>
 #include <cmmc/Analysis/SCEVAnalysis.hpp>

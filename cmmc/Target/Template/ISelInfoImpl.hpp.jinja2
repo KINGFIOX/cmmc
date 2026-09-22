@@ -42,7 +42,8 @@ static bool matchAndSelectPattern{{pattern.match_id}}(MIRInst& inst{{pattern.mat
 static bool matchAndSelectImpl(MIRInst& inst, ISelContext& ctx) {
     switch(inst.opcode()) {
     {% for inst, patterns in isel_patterns.items() %}case {{inst}}: {
-        {% for pattern in patterns %}if(matchAndSelectPattern{{pattern.match_id}}(inst, ctx))return true;{% endfor %}
+        {% for pattern in patterns %}if(matchAndSelectPattern{{pattern.match_id}}(inst, ctx))return true;
+        {% endfor %}
         break;
     }{% endfor %}
     default:

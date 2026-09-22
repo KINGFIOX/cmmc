@@ -22,6 +22,7 @@
 #include <cmmc/Support/Diagnostics.hpp>
 #include <cmmc/Support/Options.hpp>
 #include <cmmc/Transforms/Hyperparameters.hpp>
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <iostream>

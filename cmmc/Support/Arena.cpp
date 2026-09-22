@@ -67,8 +67,8 @@ void* Arena::allocate(size_t size, size_t alignment) {
 }
 void Arena::deallocate(void* p, size_t size) {
     if(size >= blockSize) {
-        free(p);  // NOLINT
         mLargeBlocks.erase(p);
+        free(p);  // NOLINT
     }
 }
 

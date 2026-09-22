@@ -65,12 +65,9 @@ $(BIN): $(OBJS) $(DIR_BUILD)/objs/SplSupport.o $(DIR_BUILD)/objs/SysYSupport.o
 .PHONY: clean bear2 bear3 debug cmmc
 clean:
 	rm -rf *~ $(DIR_BUILD) bin
-bear2: clean # make clangd happy
-	mkdir -p $(DIR_BUILD)
-	bear -o $(DIR_BUILD)/compile_commands.json $(MAKE)
-bear3: clean # make clangd happy
-	mkdir -p $(DIR_BUILD)
-	bear --output $(DIR_BUILD)/compile_commands.json -- $(MAKE)
+bear2 bear3: clean # make clangd happy (delegates to CMake, which exports compile_commands.json)
+	cmake -S . -B $(DIR_BUILD) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) -DCMMC_LLVM_SUPPORT=OFF
+	cmake --build $(DIR_BUILD) -j $$(nproc)
 -include $(OBJS:.o=.d)
 debug: $(BIN)
 	gdb $(BIN)
